@@ -1,6 +1,6 @@
 import fitz
 
-from information_extractor import extract_email, extract_phone
+from information_extractor import extract_name, extract_email, extract_phone
 
 
 pdf_path = "data/resumes/Sonica Balakrishnan Resume 1.pdf"
@@ -13,7 +13,10 @@ for page in document:
     text += page.get_text()
 
 document.close()
-print("----- EMAIL -----")
+print("----- NAME -----")
+print(extract_name(text))
+
+print("\n----- EMAIL -----")
 print(extract_email(text))
 
 print("\n----- PHONE -----")
