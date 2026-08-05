@@ -1,4 +1,10 @@
 import fitz
+from information_extractor import (
+    extract_name,
+    extract_email,
+    extract_phone,
+    extract_skills,
+)
 
 from information_extractor import extract_name, extract_email, extract_phone
 
@@ -21,3 +27,5 @@ print(extract_email(text))
 
 print("\n----- PHONE -----")
 print(extract_phone(text))
+print("\n----- SKILLS -----")
+print(extract_skills(text))
