@@ -23,4 +23,4 @@ This project analyzes resumes and compares them with a job description.
 
 ## Project Status
 
-Project setup in progress.
+Project in progress.
