@@ -41,6 +41,7 @@ def extract_name(text):
 
     return None
 def extract_skills(text):
+    def extract_skills(text):
     """
     Extract matching skills from the resume.
     """
@@ -56,7 +57,13 @@ def extract_skills(text):
     # Check each skill
     for skill in skills_df["Skill"]:
 
-        if skill.lower() in text:
+        skill = skill.strip()
+
+        # Create a pattern for the complete skill
+        pattern = r"\b" + re.escape(skill.lower()) + r"\b"
+
+        # Search for the skill
+        if re.search(pattern, text):
             found_skills.append(skill)
 
     return found_skills
