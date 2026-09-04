@@ -1,0 +1,23 @@
+Data Engineer
+
+We are looking for a Data Engineer to join our team.
+
+Responsibilities:
+- Build and maintain data pipelines.
+- Process and analyze large datasets.
+- Develop data solutions using Python and SQL.
+- Work with cloud platforms and databases.
+- Collaborate with data scientists and software engineers.
+
+Requirements:
+- Python
+- SQL
+- Pandas
+- NumPy
+- Apache Spark
+- AWS
+- Docker
+- Git
+- PostgreSQL
+- Machine Learning
+- Data Engineering
