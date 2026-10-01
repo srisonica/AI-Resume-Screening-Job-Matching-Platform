@@ -1,7 +1,12 @@
 import re
 import pandas as pd
 
+
 def extract_email(text):
+    """
+    Extract the first email address found in the resume.
+    """
+
     pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 
     match = re.search(pattern, text)
@@ -26,6 +31,7 @@ def extract_phone(text):
 
     return None
 
+
 def extract_name(text):
     """
     Extract the candidate's name from the beginning of the resume.
@@ -40,29 +46,24 @@ def extract_name(text):
             return line
 
     return None
+
+
 def extract_skills(text):
-    def extract_skills(text):
     """
     Extract matching skills from the resume.
     """
 
-    # Read skills.csv
     skills_df = pd.read_csv("data/skills/skills.csv")
 
-    # Convert resume text to lowercase
     text = text.lower()
 
     found_skills = []
 
-    # Check each skill
     for skill in skills_df["Skill"]:
-
         skill = skill.strip()
 
-        # Create a pattern for the complete skill
         pattern = r"\b" + re.escape(skill.lower()) + r"\b"
 
-        # Search for the skill
         if re.search(pattern, text):
             found_skills.append(skill)
 

@@ -1,35 +1,48 @@
 # Job Description Analyzer
 
-job_path = "data/jobs/data_engineer_job.txt"
 
-# Read the job description
-with open(job_path, "r", encoding="utf-8") as file:
-    job_text = file.read()
+def extract_job_skills(job_path):
+    """
+    Read a job description and extract required skills.
+    """
 
-# Skills we want to look for
-skills = [
-    "Python",
-    "SQL",
-    "Pandas",
-    "NumPy",
-    "Apache Spark",
-    "AWS",
-    "Docker",
-    "Git",
-    "PostgreSQL",
-    "Machine Learning",
-    "Data Engineering"
-]
+    # Read the job description
+    with open(job_path, "r", encoding="utf-8") as file:
+        job_text = file.read()
 
-# Find skills mentioned in the job description
-found_skills = []
+    # Skills we want to look for
+    skills = [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "Apache Spark",
+        "AWS",
+        "Docker",
+        "Git",
+        "PostgreSQL",
+        "Machine Learning",
+        "Data Engineering"
+    ]
 
-for skill in skills:
-    if skill.lower() in job_text.lower():
-        found_skills.append(skill)
+    # Find skills mentioned in the job description
+    found_skills = []
 
-# Display the results
-print("----- REQUIRED JOB SKILLS -----")
+    for skill in skills:
+        if skill.lower() in job_text.lower():
+            found_skills.append(skill)
 
-for skill in found_skills:
-    print(skill)
+    return found_skills
+
+
+# Test the function when this file is run directly
+if __name__ == "__main__":
+
+    job_path = "data/jobs/data_engineer_job.txt"
+
+    job_skills = extract_job_skills(job_path)
+
+    print("----- REQUIRED JOB SKILLS -----")
+
+    for skill in job_skills:
+        print(skill)
